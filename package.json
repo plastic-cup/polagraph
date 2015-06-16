@@ -10,7 +10,7 @@
     "jshint": "^2.8.0"
   },
   "scripts": {
-    "test": "test/*.js"
+    "test": "node tests/*.js"
   },
   "repository": {
     "type": "git",
