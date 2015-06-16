@@ -4,6 +4,9 @@
   "description": "picservice",
   "main": "index.js",
   "devDependencies": {
+    "bell": "^4.0.0",
+    "hapi": "^8.6.1",
+    "hapi-auth-cookie": "^3.0.1",
     "jshint": "^2.8.0"
   },
   "scripts": {
