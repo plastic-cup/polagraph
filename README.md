@@ -1,3 +1,8 @@
+<a href="https://codeclimate.com/github/plastic-cup/polagraph"><img src="https://codeclimate.com/github/plastic-cup/polagraph/badges/gpa.svg" /></a>
+<a href="https://codeclimate.com/github/plastic-cup/polagraph/coverage"><img src="https://codeclimate.com/github/plastic-cup/polagraph/badges/coverage.svg" /></a>
+
+
+
 
 # polagraph
 
@@ -8,7 +13,8 @@ Will be hosted on Heroku eventually (estimated date of online launch 18.6.2015).
 ##How to use?
 
 Out polagraph should be online at Heroku by Thursday 18.6.2015.
-But until then:
+But until then: add dependencies will be installed by : `npm install`.
+
 
 #APP specs
 
@@ -34,14 +40,30 @@ But until then:
 @ Pivotal tracker-> User stories & Epics & ToDoList
 
 
-### Wireframes
-
-![Wireframe1](images/Wireframes1.png)
-![Wireframe2](images/Wireframes2.png)
-
 
 ##How?
 
 WDD -> Wine driven development
+
 RDD -> ReadMe driven development
+
 TDD -> Test driven development
+
+##What we be using?
+The kickass framework of the week is  **HAPI JS** (http://hapijs.com/)
+
+-3rd party authentication with hapi plugin-> **bell**
+(https://github.com/hapijs/bell)
+
+-Cookie based session management with bell to enable multiple pages-> (https://github.com/hapijs/hapi-auth-cookie)
+
+-Data collection to logs _[to enable data analysis]_ with hapi plugin->**good** (https://github.com/hapijs/good)
+
+-Emailing delivery API -> **Mandrill** (http://mandrill.com/)  
+
+
+
+### Wireframes
+
+![Wireframe1](images/Wireframes1.png)
+![Wireframe2](images/Wireframes2.png)
