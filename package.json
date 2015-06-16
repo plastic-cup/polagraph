@@ -1,0 +1,30 @@
+{
+  "name": "polagraph",
+  "version": "1.0.0",
+  "description": "picservice",
+  "main": "index.js",
+  "devDependencies": {
+    "bell": "^4.0.0",
+    "hapi": "^8.6.1",
+    "hapi-auth-cookie": "^3.0.1",
+    "jshint": "^2.8.0"
+  },
+  "scripts": {
+    "test": "test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plastic-cup/polagraph.git"
+  },
+  "keywords": [
+    "polarbears",
+    "hapi",
+    "photos"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plastic-cup/polagraph/issues"
+  },
+  "homepage": "https://github.com/plastic-cup/polagraph#readme"
+}
