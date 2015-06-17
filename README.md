@@ -1,5 +1,6 @@
-<a href="https://codeclimate.com/github/plastic-cup/polagraph"><img src="https://codeclimate.com/github/plastic-cup/polagraph/badges/gpa.svg" /></a>
-<a href="https://codeclimate.com/github/plastic-cup/polagraph/coverage"><img src="https://codeclimate.com/github/plastic-cup/polagraph/badges/coverage.svg" /></a>
+[![Build Status](https://travis-ci.org/plastic-cup/polagraph.svg?branch=master)](https://travis-ci.org/plastic-cup/polagraph)
+[![Code Climate](https://codeclimate.com/github/plastic-cup/polagraph/badges/gpa.svg)](https://codeclimate.com/github/plastic-cup/polagraph)
+[![Test Coverage](https://codeclimate.com/github/plastic-cup/polagraph/badges/coverage.svg)](https://codeclimate.com/github/plastic-cup/polagraph/coverage)
 
 
 
@@ -62,6 +63,27 @@ The kickass framework of the week is  **HAPI JS** (http://hapijs.com/)
 -Emailing delivery API -> **Mandrill** (http://mandrill.com/)  
 
 
+###File structure
+
+Homepage: _Does not require authentication_
+* Feed of most recent pictures from all users
+* Login/Signup button
+
+FeedPage:
+* Feed of most recent pictures from all users
+* Ability to comment & upload
+* Logout button
+
+ProfilePage:
+* User Profile (Name & details)
+* Grid of your photos
+* Upload link
+* Logout button
+
+UploadPage:
+* File chooser
+* File preview
+* Description input
 
 ### Wireframes
 
