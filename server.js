@@ -12,4 +12,3 @@ server.route(require('./routes'));
 module.exports = server;
 
 server.start();
-console.log('Server running at localhost: 8000');
