@@ -30,6 +30,6 @@
   "homepage": "https://github.com/plastic-cup/polagraph#readme",
   "dependencies": {
     "aws-sdk": "^2.1.34",
-    "filetype": "^0.1.0"
+    "file-type": "^0.1.0"
   }
 }
