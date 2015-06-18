@@ -5,6 +5,8 @@ var Hapi = require('hapi'),
 	Config = require('./tokens.json'),
 	good = require('good'),
 	options = require('./log-options'),
+	Handlebars = require('handlebars'),
+    Path = require('path');
 	server = new Hapi.Server();
 
 

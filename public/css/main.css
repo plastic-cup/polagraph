@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -10,31 +11,33 @@ html {
 }
 
 body {
-  background-color: saddlebrown;
-  color: saddlebrown;
+  background-color: #631;
+  color: #631;
   font-family: "Junction";
 }
 
 #header {
-  background-color: saddlebrown;
+  background-color: #631;
   padding: 1vh;
-  padding-bottom: 2vh;
+  padding-bottom: 1vh;
 }
 
 #logo {
-  height: 6vh;
+  margin-top: 1rem;
+  vertical-align: middle;
+  width: 60vw;
 }
 
 #login {
   background: none;
   border: none;
-  color: #eed;
+  color: #ddc;
   float: right;
   font-family: "Ostrich Sans";
   font-size: 6vh;
   font-weight: lighter;
   letter-spacing: 1rem;
-  margin-top: auto;
+  vertical-align: middle;
 
 }
 
@@ -43,7 +46,8 @@ body {
 }
 
 #feed{
-  background-color: #eed;
+  background-color: #eec;
+  border: 2vw solid #653311;
   padding-top: 1rem;
   margin-top: 1vh;
 }
@@ -59,13 +63,12 @@ body {
   font-family: "ostrich sans";
   font-size: 4rem;
   letter-spacing: 2rem;
-  margin-top: -1rem;
   padding-right: 2rem;
 }
 
 .feed-pic{
-  width: 100%;
-  letter-spacing: 0.1rem;
+  width: 101vw;
+  margin-left: -2vw;
 }
 
 h1, h2, h3, h4, h5 {
@@ -73,6 +76,17 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 7.3rem;
+  font-size: 7rem;
+  margin-left: 0.2rem;
   text-align: center;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 5vw;
+  letter-spacing: 2.5vw;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  margin-right: -1.5rem;
 }

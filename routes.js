@@ -36,9 +36,11 @@ module.exports = [
         },
         handler: function(request, reply){
                 if (!request.auth.isAuthenticated) {
-                    return reply.file('notLoggedIn.html');
+                    console.log(request.auth);
+                return reply.file('notLoggedIn.html');
+                }else{
+                return reply.file('feed.html');
                 }
-                return reply.file('paskaa.html');
             }
         }
     }, 
@@ -46,13 +48,15 @@ module.exports = [
     method :'GET',
     path : '/logout',
     config: {
-        auth:'session',
+        auth:{
+        strategy:'session',
+        },
             handler: function(request, reply){
                 var creds = request.auth.credentials; 
                 request.auth.session.clear();
                 console.log('creds', creds);
                 //request.auth.session.set(request.auth.credentials.profile); 
-            reply.file('paskaa.html');
+            return reply.redirect('/');
             }
         }    
     }, 
