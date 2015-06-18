@@ -1,0 +1,33 @@
+html {
+  font-size: 116.5%;
+}
+
+body {
+  border: 1px solid black;
+  background-color: #eed;
+}
+
+#header {
+  background-color: saddlebrown;
+  padding: 1vh;
+}
+
+#logo {
+  height: 5.5vh;
+}
+
+#login {
+  font-size: 5vh;
+  color: #eed;
+  float: right;
+  background: none;
+  margin-top: auto;
+  border: none;
+  font-family: "Ostrich Sans";
+  /*font-weight: bold;*/
+
+}
+
+#login:focus{
+  outline: 0;
+}

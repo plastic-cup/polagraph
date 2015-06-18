@@ -35,6 +35,16 @@ module.exports = [
                 console.log(data);
             });
         }
+    },
+
+    {
+        method: 'GET',
+        path: '/static/{path*}',
+        handler: {
+            directory: {
+                path: './',
+            }
+        }
     }
 
 ];
