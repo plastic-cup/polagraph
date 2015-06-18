@@ -1,13 +1,24 @@
 var Hapi = require('hapi'),
 	fs = require('fs'),
-	server = new Hapi.Server(),
 	Bell = require('bell'),
 	Cookie = require('hapi-auth-cookie'),
-	Config = require('./tokens.json');
+	Config = require('./tokens.json'),
+	good = require('good'),
+	options = require('./log-options'),
+	server = new Hapi.Server();
+
 
 server.connection({
-  host: 'localhost',
-  port: 8000,
+	host: 'localhost',
+	port: 8000,
+});
+
+server.views({
+    engines : {
+        html : Handlebars,
+    },
+    path : Path.join(__dirname, 'public'),
+
 });
 
 server.register([Bell, Cookie], function (err) {
@@ -34,4 +45,11 @@ server.route(require('./routes'));
 
 module.exports = server;
 
-server.start();
+server.register({ register: good, options: options }, function (err) {
+        if (err) {
+            throw err;
+        }
+        server.start(function () {
+            server.log('info', 'Server running at: ' + server.info.uri);
+        });
+});
