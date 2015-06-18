@@ -76,7 +76,7 @@ module.exports = [
 
     {
         method : 'GET',
-        path : 'view/{picture}',
+        path : '/view/{picture}',
         handler: handlers['GET /{picture}']
     },
 
