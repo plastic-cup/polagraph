@@ -1,0 +1,22 @@
+{
+    "auth": {
+        "urls": {
+            "failureRedirect": "/login",
+            "successRedirect": "/on-login",
+            "failureFlash": true
+        },
+        "google": {
+            "provider": "google",
+            "password": "passwordHere", 
+            "isSecure": false,
+            "clientId": "ClientIdHere",
+            "clientSecret": "clientSecret"
+        }
+    },
+    "session": {
+        "cookieOptions": {
+            "password": "passwordHere", 
+            "isSecure": false
+        }
+    }
+}
