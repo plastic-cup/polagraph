@@ -7,6 +7,15 @@ server.connection({
   port: 8000,
 });
 
+server.views({
+    engines : {
+        html : Handlebars,
+    },
+    path : Path.join(__dirname, 'public'),
+    helpersPath : "helpers"
+
+});
+
 server.route(require('./routes'));
 
 module.exports = server;
