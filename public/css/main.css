@@ -47,7 +47,7 @@ body {
   outline: 0;
 }
 
-#feed{
+#feed, #upload{
   background-color: #eec;
   border: 2vw solid #653311;
   padding-top: 10vh;
@@ -70,6 +70,7 @@ body {
 .feed-pic{
   width: 101vw;
   margin-left: -2vw;
+  border-top: 0.5vw solid #653311;
 }
 
 h1, h2, h3, h4, h5 {
@@ -90,4 +91,10 @@ h4 {
   margin-top: -1rem;
   margin-bottom: 1rem;
   margin-right: -1.5rem;
+}
+
+@media (orientation: landscape){
+  #feed {
+    padding-top: 20vh;
+  }
 }
