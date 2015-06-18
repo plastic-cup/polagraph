@@ -35,6 +35,7 @@
   "homepage": "https://github.com/plastic-cup/polagraph#readme",
   "dependencies": {
     "aws-sdk": "^2.1.34",
-    "file-type": "^2.7.0"
+    "file-type": "^2.7.0",
+    "mongodb": "^2.0.34"
   }
 }

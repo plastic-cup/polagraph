@@ -15,6 +15,14 @@ module.exports = [
 
     {
         method : 'GET',
+        path : '/upload.html',
+        handler: function(request, reply){
+            reply.file('upload.html');
+        }
+    },
+
+    {
+        method : 'GET',
         path : '/view/{picture}',
         handler: function(request, reply){
             reply('<img src="https://s3.amazonaws.com/polagraph/' + request.params.picture + '">');
@@ -42,7 +50,7 @@ module.exports = [
         path: '/static/{path*}',
         handler: {
             directory: {
-                path: './',
+                path: 'public',
             }
         }
     }
