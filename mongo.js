@@ -35,16 +35,3 @@ mongo.remove = function(collection, query, callback){
 };
 
 module.exports = mongo;
-
-// mongo.insert(userCollection, {'name' : 'Bob'}, function(err, data){
-//     console.log(data);
-// });
-
-
-mongo.read(userCollection, {_id: new mongodb.ObjectID('5582daa5198e58a89d0279ea')}, function(err, data){
-    console.log(data);
-});
-
-// mongo.read(userCollection, {name : 'Bob'}, function(err, data){
-//     console.log(data);
-// });
