@@ -27,5 +27,7 @@ build/Release
 node_modules
 
 #.DS_Store
-
 */DS_Store
+
+#logs
+our-log
