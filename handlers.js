@@ -1,6 +1,7 @@
 module.exports = {
     'GET /' : function(request, reply){
-      reply.file('index.html');
+        console.log('hi');
+      reply.file('public/index.html');
     },
 
     'GET /{picture}' : function(request, reply){
@@ -21,7 +22,7 @@ module.exports = {
 
     'GET /static/{path*}' : {
         directory: {
-            path: './',
+            path: 'public',
         }
     }
 };

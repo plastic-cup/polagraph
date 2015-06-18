@@ -2,6 +2,8 @@ var Hapi = require('hapi'),
 	fs = require('fs'),
 	good = require('good'),
 	options = require('./log-options'),
+	Handlebars = require('handlebars'),
+    Path = require('path');
 	server = new Hapi.Server();
 
 server.connection({
