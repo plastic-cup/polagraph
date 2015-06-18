@@ -5,6 +5,7 @@
   "main": "index.js",
   "devDependencies": {
     "bell": "^4.0.0",
+    "code": "^1.4.1",
     "form-data": "^1.0.0-rc1",
     "hapi": "^8.6.1",
     "hapi-auth-cookie": "^3.0.1",
