@@ -13,13 +13,13 @@ module.exports = {
 
     'POST /upload' : function (request, reply){
         var type = filetype(request.payload.upload);
-        type = {ext: '.jpg', mime: 'image/jpeg'};
         s3.putObject({
             Bucket : 'polagraph',
             Key : request.payload.title + '.' + type.ext,
             Body : request.payload.upload,
             ContentType : type.mime,
         }, function(err, data){
+            console.log(err);
             console.log(data);
         });
     },

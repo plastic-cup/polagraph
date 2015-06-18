@@ -6,7 +6,7 @@ var Hapi = require('hapi'),
 	good = require('good'),
 	options = require('./log-options'),
 	Handlebars = require('handlebars'),
-    Path = require('path');
+    Path = require('path'),
 	server = new Hapi.Server();
 
 
@@ -34,11 +34,11 @@ server.register([Bell, Cookie], function (err) {
         });
 
 		server.auth.strategy('google', 'bell', {
-	        provider: 'google', 
-	        password: Config.auth.google.password, 
+	        provider: 'google',
+	        password: Config.auth.google.password,
 			clientId: Config.auth.google.clientId,
 			clientSecret: Config.auth.google.clientSecret,
-	        isSecure: false    
+	        isSecure: false
 	    });
 });
 
