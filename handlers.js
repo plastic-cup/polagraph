@@ -1,6 +1,9 @@
+var AWS = require('aws-sdk');
+var filetype = require('file-type');
+var s3 = new AWS.S3();
+
 module.exports = {
     'GET /' : function(request, reply){
-        console.log('hi');
       reply.file('public/index.html');
     },
 
@@ -9,7 +12,8 @@ module.exports = {
     },
 
     'POST /upload' : function (request, reply){
-        var type = filetype((request.payload.upload));
+        var type = filetype(request.payload.upload);
+        type = {ext: '.jpg', mime: 'image/jpeg'};
         s3.putObject({
             Bucket : 'polagraph',
             Key : request.payload.title + '.' + type.ext,

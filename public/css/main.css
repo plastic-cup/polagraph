@@ -20,6 +20,8 @@ body {
   background-color: #631;
   padding: 1vh;
   padding-bottom: 1vh;
+  position: fixed;
+  width: 100%;
 }
 
 #logo {
@@ -48,8 +50,7 @@ body {
 #feed{
   background-color: #eec;
   border: 2vw solid #653311;
-  padding-top: 1rem;
-  margin-top: 1vh;
+  padding-top: 10vh;
 }
 
 .feed-entry p {
