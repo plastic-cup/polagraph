@@ -1,7 +1,5 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var assert = require('assert');
-var userCollection = 'users';
 var url = 'mongodb://localhost:27018/myproject';
 var mongoHandlers = require('./mongoHandlers');
 
