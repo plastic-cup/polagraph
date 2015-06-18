@@ -9,7 +9,7 @@ var options = {
             reporter : require('good-http'),
             events : { request : "*" },
             config : {
-                        endpoint : 'http://localhost:3000/analytics',
+                        endpoint : 'http://localhost:3000/analytics', // will change on heroku
                         threshold : 0,
                      }
         },

@@ -23,14 +23,18 @@ server.views({
 
 });
 
+server.route(require('./routes'));
+
+module.exports = server;
+
 server.register([Bell, Cookie], function (err) {
 	if (err) throw err;
 
         server.auth.strategy('session', 'cookie', {
-        cookie: 'sid',
-        password: Config.session.cookieOptions.password,
-        redirectTo: false,
-        isSecure:false,
+	        cookie: 'sid',
+	        password: Config.session.cookieOptions.password,
+	        redirectTo: false,
+	        isSecure:false,
         });
 
 		server.auth.strategy('google', 'bell', {
@@ -41,11 +45,6 @@ server.register([Bell, Cookie], function (err) {
 	        isSecure: false
 	    });
 });
-
-
-server.route(require('./routes'));
-
-module.exports = server;
 
 server.register({ register: good, options: options }, function (err) {
         if (err) {
