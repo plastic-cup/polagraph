@@ -7,7 +7,7 @@ module.exports = {
       reply.file('public/index.html');
     },
 
-    'GET /view/{picture}' : function(request, reply){
+    'GET /{picture}' : function(request, reply){
       reply('<img src="https://s3.amazonaws.com/polagraph/' + request.params.picture + '">');
     },
 
