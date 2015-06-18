@@ -27,10 +27,10 @@ module.exports = [
 
                 request.auth.session.clear();
                 request.auth.session.set({googleName:creds.profile.displayName});
-                //request.auth.session.set(request.auth.credentials.profile); 
+                //request.auth.session.set(request.auth.credentials.profile);
             reply.file('feed.html');
             }
-        }    
+        }
     },
     {
     method :'GET',
@@ -49,7 +49,7 @@ module.exports = [
                 }
             }
         }
-    }, 
+    },
     {
     method :'GET',
     path : '/logout',
@@ -58,14 +58,14 @@ module.exports = [
         strategy:'session',
         },
             handler: function(request, reply){
-                var creds = request.auth.credentials; 
+                var creds = request.auth.credentials;
                 request.auth.session.clear();
                 console.log('creds', creds);
-                //request.auth.session.set(request.auth.credentials.profile); 
+                //request.auth.session.set(request.auth.credentials.profile);
             return reply.redirect('/');
             }
-        }    
-    }, 
+        }
+    },
 
     {
         method : 'GET',
@@ -86,4 +86,3 @@ module.exports = [
     }
 
 ];
-    
