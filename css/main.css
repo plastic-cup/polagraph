@@ -11,18 +11,19 @@ html {
 }
 
 body {
-  background-color: saddlebrown;
-  color: saddlebrown;
+  background-color: #631;
+  color: #631;
   font-family: "Junction";
 }
 
 #header {
-  background-color: saddlebrown;
+  background-color: #631;
   padding: 1vh;
   padding-bottom: 1vh;
 }
 
 #logo {
+  margin-top: 1rem;
   vertical-align: middle;
   width: 60vw;
 }
@@ -30,7 +31,7 @@ body {
 #login {
   background: none;
   border: none;
-  color: #ffe;
+  color: #ddc;
   float: right;
   font-family: "Ostrich Sans";
   font-size: 6vh;
@@ -45,8 +46,8 @@ body {
 }
 
 #feed{
-  background-color: #ffe;
-  border: 2vw solid saddlebrown;
+  background-color: #eec;
+  border: 2vw solid #653311;
   padding-top: 1rem;
   margin-top: 1vh;
 }
@@ -66,9 +67,8 @@ body {
 }
 
 .feed-pic{
-  width: 100vw;
-  letter-spacing: 0.1rem;
-  margin-left: -1.9vw;
+  width: 101vw;
+  margin-left: -2vw;
 }
 
 h1, h2, h3, h4, h5 {
@@ -83,8 +83,8 @@ h1 {
 
 h4 {
   font-weight: normal;
-  font-size: 3rem;
-  letter-spacing: 1.5rem;
+  font-size: 5vw;
+  letter-spacing: 2.5vw;
   text-align: center;
   margin-top: -1rem;
   margin-bottom: 1rem;
