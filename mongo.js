@@ -1,7 +1,12 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var url = 'mongodb://localhost:27018/myproject';
+var url = 'mongodb://localhost:27017/myproject';
 var mongoHandlers = require('./mongohandlers');
+
+
+MongoClient.connect(url, function(err, db){
+    console.log(err, db);
+});
 
 var mongo = {};
 
