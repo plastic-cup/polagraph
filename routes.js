@@ -9,32 +9,44 @@ module.exports = [
         method : 'GET',
         path : '/',
         handler: function(request, reply){
-          reply.file('index.html');
+            reply.file('index.html');
         }
     },
+
+    {
+    	method: "GET",
+    	path: "/{filename}",
+    	handler: {
+    		file: function(request){
+    			return request.params.filename;
+    		}
+    	}
+    },
+
 
     {
         method : 'GET',
-        path : '/{picture}',
+        path : '/view/{picture}',
         handler: function(request, reply){
-          reply('<img src="https://s3.amazonaws.com/polagraph/' + request.params.picture + '">');
+            reply('<img src="https://s3.amazonaws.com/polagraph/' + request.params.picture + '">');
         }
     },
 
     {
-        path: '/upload',
-        method: 'POST',
-        handler: function (request, reply){
-            var type = filetype((request.payload.upload));
-            s3.putObject({
-                Bucket : 'polagraph',
-                Key : request.payload.title + '.' + type.ext,
-                Body : request.payload.upload,
-                ContentType : type.mime,
-            }, function(err, data){
-                console.log(data);
-            });
-        }
-    }
+       path: '/upload',
+       method: 'POST',
+       handler: function (request, reply){
+           console.log('#######', request.payload);
+           var type = filetype((request.payload.upload));
+           s3.putObject({
+               Bucket : 'polagraph',
+               Key : request.payload.title + '.' + type.ext,
+               Body : request.payload.upload,
+               ContentType : type.mime,
+           }, function(err, data){
+               console.log(data);
+           });
+       }
+   },
 
 ];
