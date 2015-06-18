@@ -5,6 +5,7 @@
   "main": "index.js",
   "devDependencies": {
     "bell": "^4.0.0",
+    "file-type": "^2.7.0",
     "code": "^1.4.1",
     "form-data": "^1.0.0-rc1",
     "hapi": "^8.6.1",
@@ -36,6 +37,10 @@
   "dependencies": {
     "aws-sdk": "^2.1.34",
     "file-type": "^2.7.0",
-    "mongodb": "^2.0.34"
+    "mongodb": "^2.0.34",
+    "good": "^6.1.4",
+    "good-file": "^5.0.1",
+    "good-http": "^5.0.0",
+    "handlebars": "^3.0.3"
   }
 }

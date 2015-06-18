@@ -1,58 +1,78 @@
-var http = require('http');
-var AWS = require('aws-sdk');
-var filetype = require('file-type');
-var s3 = new AWS.S3();
+var handlers = require('./handlers');
 
 module.exports = [
 
     {
         method : 'GET',
         path : '/',
+        handler: handlers['GET /']
+    },
+    {
+    method :'GET',
+    path : '/login',
+    config: {
+        auth:'google',
+            handler: function(request, reply){
+                var creds = request.auth.credentials;
+                console.log('creds', creds);
+                request.auth.session.clear();
+                request.auth.session.set({googleName:creds.profile.displayName});
+                //request.auth.session.set(request.auth.credentials.profile);
+            reply.file('feed.html');
+            }
+        }
+    },
+    {
+    method :'GET',
+    path : '/feed',
+    config: {
+        auth:{
+            strategy: 'session',
+            mode: 'try'
+        },
         handler: function(request, reply){
-            reply.file('index.html');
+                if (!request.auth.isAuthenticated) {
+                    console.log(request.auth);
+                return reply.file('notLoggedIn.html');
+                }else{
+                return reply.file('feed.html');
+                }
+            }
+        }
+    },
+    {
+    method :'GET',
+    path : '/logout',
+    config: {
+        auth:{
+        strategy:'session',
+        },
+            handler: function(request, reply){
+                var creds = request.auth.credentials;
+                request.auth.session.clear();
+                console.log('creds', creds);
+                //request.auth.session.set(request.auth.credentials.profile);
+            return reply.redirect('/');
+            }
         }
     },
 
     {
         method : 'GET',
-        path : '/upload.html',
-        handler: function(request, reply){
-            reply.file('upload.html');
-        }
+        path : '/{picture}',
+        handler: handlers['GET /{picture}']
     },
 
     {
-        method : 'GET',
-        path : '/view/{picture}',
-        handler: function(request, reply){
-            reply('<img src="https://s3.amazonaws.com/polagraph/' + request.params.picture + '">');
-        }
-    },
-
-    {
-        path: '/upload',
         method: 'POST',
-        handler: function (request, reply){
-            var type = filetype((request.payload.upload));
-            s3.putObject({
-                Bucket : 'polagraph',
-                Key : request.payload.title + '.' + type.ext,
-                Body : request.payload.upload,
-                ContentType : type.mime,
-            }, function(err, data){
-                console.log(data);
-            });
-        }
+        path: '/upload',
+        handler: handlers['POST /upload']
     },
 
     {
         method: 'GET',
         path: '/static/{path*}',
-        handler: {
-            directory: {
-                path: 'public',
-            }
-        }
+        handler: handlers['GET /static/{path*}']
     }
 
 ];
