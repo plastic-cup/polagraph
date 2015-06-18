@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 116.5%;
+  hyphens: auto;
+  line-height: 1.5;
+}
+
+body {
+  background-color: saddlebrown;
+  color: saddlebrown;
+  font-family: "Junction";
+}
+
+#header {
+  background-color: saddlebrown;
+  padding: 1vh;
+  padding-bottom: 2vh;
+}
+
+#logo {
+  height: 6vh;
+}
+
+#login {
+  background: none;
+  border: none;
+  color: #eed;
+  float: right;
+  font-family: "Ostrich Sans";
+  font-size: 6vh;
+  font-weight: lighter;
+  letter-spacing: 1rem;
+  margin-top: auto;
+
+}
+
+#login:focus{
+  outline: 0;
+}
+
+#feed{
+  background-color: #eed;
+  padding-top: 1rem;
+  margin-top: 1vh;
+}
+
+.feed-entry p {
+  font-size: 1rem;
+  text-align: justify;
+  padding: 1rem 3rem;
+}
+
+.feed-entry p span {
+  float: left;
+  font-family: "ostrich sans";
+  font-size: 4rem;
+  letter-spacing: 2rem;
+  margin-top: -1rem;
+  padding-right: 2rem;
+}
+
+.feed-pic{
+  width: 100%;
+  letter-spacing: 0.1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Ostrich Sans';
+}
+
+h1 {
+  font-size: 7.3rem;
+  text-align: center;
+}

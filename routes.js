@@ -14,17 +14,6 @@ module.exports = [
     },
 
     {
-    	method: "GET",
-    	path: "/{filename}",
-    	handler: {
-    		file: function(request){
-    			return request.params.filename;
-    		}
-    	}
-    },
-
-
-    {
         method : 'GET',
         path : '/view/{picture}',
         handler: function(request, reply){
@@ -33,20 +22,29 @@ module.exports = [
     },
 
     {
-       path: '/upload',
-       method: 'POST',
-       handler: function (request, reply){
-           console.log('#######', request.payload);
-           var type = filetype((request.payload.upload));
-           s3.putObject({
-               Bucket : 'polagraph',
-               Key : request.payload.title + '.' + type.ext,
-               Body : request.payload.upload,
-               ContentType : type.mime,
-           }, function(err, data){
-               console.log(data);
-           });
-       }
-   },
+        path: '/upload',
+        method: 'POST',
+        handler: function (request, reply){
+            var type = filetype((request.payload.upload));
+            s3.putObject({
+                Bucket : 'polagraph',
+                Key : request.payload.title + '.' + type.ext,
+                Body : request.payload.upload,
+                ContentType : type.mime,
+            }, function(err, data){
+                console.log(data);
+            });
+        }
+    },
+
+    {
+        method: 'GET',
+        path: '/static/{path*}',
+        handler: {
+            directory: {
+                path: './',
+            }
+        }
+    }
 
 ];

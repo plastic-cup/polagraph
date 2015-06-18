@@ -4,17 +4,25 @@
         <meta charset="utf-8">
         <title>Polagraph</title>
         <link rel="stylesheet" href="/static/css/webfonts/fonts.css">
+        <link rel="stylesheet" href="/static/css/webfonts/junction-master/junction.css">
         <link rel="stylesheet" href="/static/css/main.css">
     </head>
     <body>
         <div id = "header">
-            <img alt = "Polagraph" src = "static/images/polagram-logo.png" id="logo">
+            <img alt = "Polagraph" src = "static/images/polagraph.png" id="logo">
             <button id ="login">Login</button>
         </div>
-        <form id="upload" action="/upload" enctype="multipart/form-data" method="post">
-        <input id="text" type="text" name="title"><br>
-        <input id="file"type="file" name="upload" multiple="multiple"><br>
-        <input type="submit" value="Upload">
-        </form>
+        <div id="feed">
+            <h1>Hope you're hungry</h1>
+            <h4>'Cos here's your feed</h4>
+            <div class="feed-entry">
+                <img class = "feed-pic" src = "static/images/snowy_mountains-wallpaper-1440x900.jpg">
+                <p><span>Caption</span> These are some mountains. Look #familiar? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellent pulvinar elementum neque sit amet sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id turpis ac metus pellentesque tincidunt. Maecenas malesuada, risus eget tincidunt tincidunt, tortor ex tincidunt dolor, a dapibus dui justo non leo. Donec euismod lacus velit, vitae accumsan metus rhoncus non. Suspendisse iaculis mi et massa aliquam, vitae consectetur tellus auctor. Donec ullamcorper, ante vitae rutrum accumsan, tortor dui pulvinar felis, vitae porttitor ipsum arcu sed arcu. Nunc porta facilisis est in luctus. Vestibulum efficitur rutrum metus eget pharetra.</p>
+            </div>
+            <div class="feed-entry">
+                <img class = "feed-pic" src = "static/images/snowy_mountains-wallpaper-1440x900.jpg">
+                <p><span>Caption</span> These are some mountains. Look #familiar? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellent pulvinar elementum neque sit amet sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id turpis ac metus pellentesque tincidunt. Maecenas malesuada, risus eget tincidunt tincidunt, tortor ex tincidunt dolor, a dapibus dui justo non leo. Donec euismod lacus velit, vitae accumsan metus rhoncus non. Suspendisse iaculis mi et massa aliquam, vitae consectetur tellus auctor. Donec ullamcorper, ante vitae rutrum accumsan, tortor dui pulvinar felis, vitae porttitor ipsum arcu sed arcu. Nunc porta facilisis est in luctus. Vestibulum efficitur rutrum metus eget pharetra.</p>
+            </div>
+        </div>
     </body>
 </html>
