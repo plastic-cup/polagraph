@@ -1,7 +1,7 @@
 var Code = require('code');
 var Lab = require('lab');
 var fs = require('fs');
-var lab = Lab.script();
+var lab = exports.lab = Lab.script();
 var server = require('../server');
 var handlers = require('../handlers');
 var filetype = require('file-type');
