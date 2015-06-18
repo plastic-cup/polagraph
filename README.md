@@ -14,7 +14,9 @@ Will be hosted on Heroku eventually (estimated date of online launch 18.6.2015).
 ##How to use?
 
 Out polagraph should be online at Heroku by Thursday 18.6.2015.
-But until then: add dependencies will be installed by : `npm install`.
+But until then:
+Add dependencies will be installed by
+ `npm install`.
 
 
 #APP specs
