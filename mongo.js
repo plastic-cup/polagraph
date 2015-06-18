@@ -34,4 +34,8 @@ mongo.remove = function(collection, query, callback){
     });
 };
 
+mongo.read('users', {firstName : 'Daniel'}, function(err, data){
+    console.log(data);
+});
+
 module.exports = mongo;

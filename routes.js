@@ -1,4 +1,5 @@
 var handlers = require('./handlers');
+var mongo = require('./mongo');
 
 module.exports = [
 
@@ -23,7 +24,13 @@ module.exports = [
                     email: creds.profile.email,
                 };
 
-                console.log('profile', profile);
+                mongo.read('users', profile, function(err, data){
+                    if (data.length === 0){
+                        mongo.insert('users', profile, function(err, data){
+                            console.log(data);
+                        });
+                    }
+                });
 
                 request.auth.session.clear();
                 request.auth.session.set({googleName:creds.profile.displayName});
