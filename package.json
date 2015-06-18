@@ -5,6 +5,7 @@
   "main": "index.js",
   "devDependencies": {
     "bell": "^4.0.0",
+    "file-type": "^2.7.0",
     "code": "^1.4.1",
     "form-data": "^1.0.0-rc1",
     "hapi": "^8.6.1",
