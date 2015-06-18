@@ -1,7 +1,3 @@
-var http = require('http');
-var AWS = require('aws-sdk');
-var filetype = require('file-type');
-var s3 = new AWS.S3();
 var handlers = require('./handlers');
 
 module.exports = [
