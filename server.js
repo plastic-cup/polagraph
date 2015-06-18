@@ -16,7 +16,8 @@ server.register([Bell, Cookie], function (err) {
         server.auth.strategy('session', 'cookie', {
         cookie: 'sid',
         password: Config.session.cookieOptions.password,
-        //redirectTo: '/feed', // Not sure if this is a) needed b)will it screw things up if severeal pages.. or smth     
+        redirectTo: false,
+        isSecure:false,
         });
 
 		server.auth.strategy('google', 'bell', {
