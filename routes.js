@@ -12,6 +12,30 @@ module.exports = [
           reply.file('index.html');
         }
     },
+    {
+    method :'GET',
+    path : '/login',
+    config: {
+        auth:'google',
+            handler: function(request, reply){
+              reply.file('feed.html');
+            }
+        }    
+    },
+    {
+    method :'GET',
+    path : '/feed',
+    config: {
+        auth:'google',
+        },
+        handler: function(request, reply){
+            if(request.auth.isAuthenticated){
+                reply.file('feed.html');
+            }else{
+                reply.file('notLoggedIn.html'); 
+            }
+        } 
+    },  
 
     {
         method : 'GET',
