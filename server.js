@@ -1,10 +1,12 @@
 var Hapi = require('hapi'),
 	fs = require('fs'),
+	good = require('good'),
+	options = require('./log-options'),
 	server = new Hapi.Server();
 
 server.connection({
-  host: 'localhost',
-  port: 8000,
+	host: 'localhost',
+	port: 8000,
 });
 
 server.views({
@@ -12,7 +14,6 @@ server.views({
         html : Handlebars,
     },
     path : Path.join(__dirname, 'public'),
-    helpersPath : "helpers"
 
 });
 
@@ -20,4 +21,11 @@ server.route(require('./routes'));
 
 module.exports = server;
 
-server.start();
+server.register({ register: good, options: options }, function (err) {
+        if (err) {
+            throw err;
+        }
+        server.start(function () {
+            server.log('info', 'Server running at: ' + server.info.uri);
+        });
+});
