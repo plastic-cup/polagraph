@@ -9,44 +9,33 @@ module.exports = [
         handler: handlers['GET /']
     },
     {
-    method :'GET',
-    path : '/login',
-    config: {
-        auth:'google',
-            handler: handlers['login']
+        method :'GET',
+        path : '/login',
+        config: {
+            auth:'google',
+                handler: handlers['login']
+            }
+    },
+    {
+        method :'GET',
+        path : '/feed',
+        config: {
+            auth:{
+                strategy: 'session',
+                mode: 'try'
+            },
+            handler: handlers['GET /feed']
         }
     },
     {
-    method :'GET',
-    path : '/feed',
-    config: {
-        auth:{
-            strategy: 'session',
-            mode: 'try'
-        },
-        handler: function(request, reply){
-                if (!request.auth.isAuthenticated) {
-                return reply.file('notLoggedIn.html');
-                }else{
-                return reply.file('feed.html');
-                }
+        method :'GET',
+        path : '/logout',
+        config: {
+            auth:{
+            strategy:'session',
+            },
+                handler: ['GET /logout']
             }
-        }
-    },
-    {
-    method :'GET',
-    path : '/logout',
-    config: {
-        auth:{
-        strategy:'session',
-        },
-            handler: function(request, reply){
-                var creds = request.auth.credentials;
-                request.auth.session.clear();
-                //request.auth.session.set(request.auth.credentials.profile);
-            return reply.redirect('/');
-            }
-        }
     },
 
     {
