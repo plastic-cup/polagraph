@@ -42,6 +42,11 @@
     "good": "^6.1.4",
     "good-file": "^5.0.1",
     "good-http": "^5.0.0",
-    "handlebars": "^3.0.3"
+    "handlebars": "^3.0.3",
+    "boom": "2.x.x",
+    "cryptiles": "2.x.x",
+    "hoek": "2.11.0",
+    "joi": "6.x.x",
+    "wreck": "5.x.x"
   }
 }
