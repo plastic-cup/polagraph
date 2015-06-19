@@ -59,7 +59,7 @@ module.exports = {
 
         request.auth.session.clear();
         request.auth.session.set({googleName:creds.profile.displayName});
-        reply.file('feed.html');
+        return reply.redirect('/');
     },
 
     'GET /all' : function(request, reply){
