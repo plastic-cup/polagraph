@@ -1,6 +1,6 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var url = 'mongodb://localhost:27017/myproject';
+var url = 'mongodb://' + DBUSER + ':' + DBPASSWORD + '@ds043972.mongolab.com:43972/heroku_j69ddf4g';
 var mongoHandlers = require('./mongohandlers');
 
 
