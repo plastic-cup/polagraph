@@ -11,6 +11,20 @@ module.exports = {
       reply.view('index.html', {header1: 'Login Unsuccessful', header2: "Deal with it"});
     },
 
+    'GET /feed' : function(request, reply){
+        if (!request.auth.isAuthenticated) {
+            return reply.file('notLoggedIn.html');
+        }else{
+            return reply.file('feed.html');
+        }
+    },
+
+    'GET /logout' : function(request, reply){
+        var creds = request.auth.credentials;
+        request.auth.session.clear();
+        return reply.redirect('/');
+    },
+
     'GET /{picture}' : function(request, reply){
       reply('<img src="https://s3.amazonaws.com/polagraph/' + request.params.picture + '">');
     },
