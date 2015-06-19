@@ -9,15 +9,12 @@
 
 A mobile/web APP to which users can upload their photos. Users need to sign in to upload & comment on them.
 
-Will be hosted on Heroku eventually (estimated date of online launch 18.6.2015).
+Polagraph now live on heroku: [Polagraph](https://arcane-beyond-4724.herokuapp.com/)
 
 ##How to use?
 
-Out polagraph should be online at Heroku by Thursday 18.6.2015.
-But until then:
-Add dependencies will be installed by
- `npm install`.
-
+Go to: [Polagraph](https://arcane-beyond-4724.herokuapp.com/)
+-> Log in using your Google account -> and start uploading pictures!
 
 #APP specs
 
@@ -65,29 +62,7 @@ The kickass framework of the week is  **HAPI JS** (http://hapijs.com/)
 -Emailing delivery API -> **Mandrill** (http://mandrill.com/)  
 
 
-###File structure
-
-Homepage: _Does not require authentication_
-* Feed of most recent pictures from all users
-* Login/Signup button
-
-FeedPage:
-* Feed of most recent pictures from all users
-* Ability to comment & upload
-* Logout button
-
-ProfilePage:
-* User Profile (Name & details)
-* Grid of your photos
-* Upload link
-* Logout button
-
-UploadPage:
-* File chooser
-* File preview
-* Description input
-
 ### Wireframes
 
-![Wireframe1](images/Wireframes1.png)
-![Wireframe2](images/Wireframes2.png)
+![Wireframe1](public/images/Wireframes1.png)
+![Wireframe2](public/images/Wireframes2.png)
