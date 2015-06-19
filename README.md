@@ -89,5 +89,5 @@ UploadPage:
 
 ### Wireframes
 
-![Wireframe1](images/Wireframes1.png)
-![Wireframe2](images/Wireframes2.png)
+![Wireframe1](publicimages/Wireframes1.png)
+![Wireframe2](public/images/Wireframes2.png)
