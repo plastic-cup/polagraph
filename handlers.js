@@ -18,7 +18,7 @@ module.exports = {
     'POST /upload' : function (request, reply){
         var type = filetype(request.payload.upload);
         var id = new Date().getTime().toString();
-        mongo.insert('pictures', {id: id, caption : request.payload.caption});
+        mongo.insert('pictures', {id: id, caption : request.payload.caption, ext: type.ext});
         s3.putObject({
             Bucket : 'polagraph',
             Key : id + '.' + type.ext,
@@ -28,8 +28,10 @@ module.exports = {
                 'uploadtime' : new Date().getTime().toString()
             }
         }, function(err, data){
-            console.log(err);
-            console.log(data);
+            if (err){
+                console.log('err', err);
+            }
+            console.log('data', data);
         });
     },
 
@@ -41,7 +43,6 @@ module.exports = {
 
     login : function(request, reply){
         var creds = request.auth.credentials;
-        console.log('the creds are ' + creds);
         var profile = {
             googleId: creds.profile.id,
             fullName: creds.profile.displayName,
@@ -53,7 +54,7 @@ module.exports = {
         mongo.read('users', profile, function(err, data){
             if (data.length === 0){
                 mongo.insert('users', profile, function(err, data){
-                    console.log(data);
+                    console.log('data',data);
                     sendEmail(data[0].email, data.firstName);
                 });
             }
@@ -67,8 +68,10 @@ module.exports = {
 
     'GET /all' : function(request, reply){
         mongo.read('pictures', {}, function(err, data){
-            console.log(err);
-            reply(data.Contents);
+            if (err){
+                console.log('err',err);
+            }
+            reply(data);
         });
     }
 };
@@ -88,7 +91,7 @@ function sendEmail(email, name) {
 		      'html': '<p>Hi ' + name +', welcome to Polagraph</p>'
 	};
 	mandrill_client.messages.send({"message": data, "async": false},function(result) {
-		console.log(result);
+		console.log('result',result);
 	}, function(e) {
 		console.log("Error " + e.message);
 	});

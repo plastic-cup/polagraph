@@ -1,6 +1,6 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var url = process.env.MONGOLAB_URI;
+var url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/myproject';
 var mongoHandlers = require('./mongohandlers');
 
 
@@ -44,7 +44,7 @@ mongo.update = function(collection, query, upd){
     });
 };
 
-// mongo.read('users', {firstName : 'Daniel'}, function(err, data){
+// mongo.read('pictures', {}, function(err, data){
 //     console.log(data);
 // });
 

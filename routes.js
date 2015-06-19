@@ -26,7 +26,6 @@ module.exports = [
         },
         handler: function(request, reply){
                 if (!request.auth.isAuthenticated) {
-                    console.log(request.auth);
                 return reply.file('notLoggedIn.html');
                 }else{
                 return reply.file('feed.html');
@@ -44,7 +43,6 @@ module.exports = [
             handler: function(request, reply){
                 var creds = request.auth.credentials;
                 request.auth.session.clear();
-                console.log('creds', creds);
                 //request.auth.session.set(request.auth.credentials.profile);
             return reply.redirect('/');
             }
