@@ -34,3 +34,5 @@ tokens.json
 data
 
 our-log
+
+*.env
