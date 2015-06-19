@@ -18,6 +18,7 @@ server.views({
     engines : {
         html : Handlebars,
     },
+	helpersPath: 'helpers',
     path : Path.join(__dirname, 'public'),
 });
 
