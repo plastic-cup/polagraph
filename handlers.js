@@ -66,7 +66,7 @@ module.exports = {
     },
 
     'GET /all' : function(request, reply){
-        s3.listObjects({Bucket : 'polagraph'}, function(err, data){
+        mongo.read('pictures', {}, function(err, data){
             console.log(err);
             reply(data.Contents);
         });
