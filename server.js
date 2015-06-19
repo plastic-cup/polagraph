@@ -37,7 +37,7 @@ server.register([Bell, Cookie], function (err) {
 	      password: Config.auth.google.password,
 				clientId: Config.auth.google.clientId,
 				clientSecret: Config.auth.google.clientSecret,
-	      isSecure: false
+	      isSecure: false,
 	  });
 });
 

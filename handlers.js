@@ -8,6 +8,7 @@ var mongo = require('./mongo');
 
 module.exports = {
     'GET /' : function(request, reply){
+        console.log(request.auth);
       reply.file('public/index.html');
     },
 
@@ -59,7 +60,7 @@ module.exports = {
 
         request.auth.session.clear();
         request.auth.session.set({googleName:creds.profile.displayName});
-        return reply.redirect('/');
+        reply.redirect('/');
     },
 
     'GET /all' : function(request, reply){
