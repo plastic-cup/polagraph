@@ -8,7 +8,7 @@ var mongo = require('./mongo');
 
 module.exports = {
     'GET /' : function(request, reply){
-      reply.view('index.html', {header1: 'Login Unsuccessful', header2: "Deal with it"});
+      reply.view('index.html', {header1: 'Login Unsuccessful', header2: "Deal with it", link: "Login"});
     },
 
     'GET /{picture}' : function(request, reply){
