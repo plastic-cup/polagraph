@@ -19,8 +19,8 @@ server.views({
         html : Handlebars,
     },
     path : Path.join(__dirname, 'public'),
-
 });
+
 
 server.register([Bell, Cookie], function (err) {
 	if (err) throw err;

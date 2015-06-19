@@ -50,15 +50,17 @@ body {
   background-color: #eec;
   border: 2vw solid #653311;
   padding-top: 10vh;
+  padding-bottom: 2vw;
 }
 
-.feed-entry p {
+.feed-entry > p {
   font-size: 1rem;
-  text-align: justify;
+  min-height: 5rem;
   padding: 1rem 3rem;
+  text-align: justify;
 }
 
-.feed-entry p span {
+.feed-entry > p > span {
   float: left;
   font-family: "ostrich sans";
   font-size: 4rem;
