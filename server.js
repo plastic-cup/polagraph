@@ -6,13 +6,12 @@ var Hapi = require('hapi'),
 		good = require('good'),
 		options = require('./log-options'),
 		Handlebars = require('handlebars'),
-    Path = require('path'),
+    	Path = require('path'),
 		server = new Hapi.Server();
 
 
 server.connection({
-	host: 'localhost',
-	port: 8000,
+	port: process.env.PORT || 8000,
 });
 
 server.views({
@@ -29,7 +28,7 @@ server.register([Bell, Cookie], function (err) {
     server.auth.strategy('session', 'cookie', {
         cookie: 'sid',
         password: Config.session.cookieOptions.password,
-        redirectTo: false,
+        redirectTo: 'false',
         isSecure:false,
     });
 
