@@ -8,7 +8,6 @@ var mongo = require('./mongo');
 
 module.exports = {
     'GET /' : function(request, reply){
-        console.log('auth', request.auth.session.get('fullName'));
       reply.file('public/index.html');
     },
 
