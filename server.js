@@ -11,8 +11,7 @@ var Hapi = require('hapi'),
 
 
 server.connection({
-	host: 'https://arcane-beyond-4724.herokuapp.com/',
-	port: 8000,
+	port: process.env.port,
 });
 
 server.views({
