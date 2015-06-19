@@ -34,8 +34,15 @@ mongo.remove = function(collection, query, callback){
     });
 };
 
-mongo.read('users', {firstName : 'Daniel'}, function(err, data){
-    console.log(data);
-});
+mongo.update = function(collection, query, upd){
+    MongoClient.connect(url, function(err, db){
+        db.collection(collection).update(query, upd);
+        db.close();
+    });
+};
+
+// mongo.read('users', {firstName : 'Daniel'}, function(err, data){
+//     console.log(data);
+// });
 
 module.exports = mongo;
