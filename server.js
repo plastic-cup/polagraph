@@ -1,6 +1,6 @@
 var Hapi = require('hapi'),
 		fs = require('fs'),
-		Bell = require('bell'),
+		Bell = require('./bell'),
 		Cookie = require('hapi-auth-cookie'),
 		Config = require('./tokens'),
 		good = require('good'),
