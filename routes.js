@@ -13,7 +13,7 @@ module.exports = [
     path : '/login',
     config: {
         auth:'google',
-            handler: handlers['login']
+        handler: handlers['login']
         }
     },
     {
