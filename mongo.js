@@ -1,6 +1,6 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var url = 'mongodb://localhost:27017/myproject';
+var url = process.env.MONGOLAB_URI;
 var mongoHandlers = require('./mongohandlers');
 
 
@@ -37,8 +37,15 @@ mongo.remove = function(collection, query, callback){
     });
 };
 
-mongo.read('users', {firstName : 'Daniel'}, function(err, data){
-    console.log(data);
-});
+mongo.update = function(collection, query, upd){
+    MongoClient.connect(url, function(err, db){
+        db.collection(collection).update(query, upd);
+        db.close();
+    });
+};
+
+// mongo.read('users', {firstName : 'Daniel'}, function(err, data){
+//     console.log(data);
+// });
 
 module.exports = mongo;
