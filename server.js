@@ -1,13 +1,13 @@
 var Hapi = require('hapi'),
-	fs = require('fs'),
-	Bell = require('bell'),
-	Cookie = require('hapi-auth-cookie'),
-	Config = JSON.parse(process.env.TOKENS),
-	good = require('good'),
-	options = require('./log-options'),
-	Handlebars = require('handlebars'),
-    Path = require('path'),
-	server = new Hapi.Server();
+		fs = require('fs'),
+		Bell = require('bell'),
+		Cookie = require('hapi-auth-cookie'),
+		Config = require('./tokens'),
+		good = require('good'),
+		options = require('./log-options'),
+		Handlebars = require('handlebars'),
+    	Path = require('path'),
+		server = new Hapi.Server();
 
 
 server.connection({
@@ -26,20 +26,20 @@ server.views({
 server.register([Bell, Cookie], function (err) {
 	if (err) throw err;
 
-        server.auth.strategy('session', 'cookie', {
+    server.auth.strategy('session', 'cookie', {
         cookie: 'sid',
         password: Config.session.cookieOptions.password,
         redirectTo: false,
         isSecure:false,
-        });
+    });
 
 		server.auth.strategy('google', 'bell', {
-	        provider: 'google',
-	        password: Config.auth.google.password,
-			clientId: Config.auth.google.clientId,
-			clientSecret: Config.auth.google.clientSecret,
-	        isSecure: false
-	    });
+	      provider: 'google',
+	      password: Config.auth.google.password,
+				clientId: Config.auth.google.clientId,
+				clientSecret: Config.auth.google.clientSecret,
+	      isSecure: false
+	  });
 });
 
 
