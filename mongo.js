@@ -1,6 +1,6 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var url = 'mongodb://' + process.env.DBUSER + ':' + process.env.DBPASSWORD + '@ds043972.mongolab.com:43972/heroku_j69ddf4g';
+var url = process.env.MONGOLAB_URI;
 var mongoHandlers = require('./mongohandlers');
 
 
