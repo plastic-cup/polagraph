@@ -51,6 +51,7 @@ body {
   background-color: #eec;
   border: 2vw solid #653311;
   padding-top: 10vh;
+  padding-bottom: 2vw;
 }
 
 .feed-entry p {
