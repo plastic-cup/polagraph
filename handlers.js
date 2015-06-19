@@ -55,14 +55,13 @@ module.exports = {
             if (data.length === 0){
                 mongo.insert('users', profile, function(err, data){
                     console.log('data',data);
-                    sendEmail(data[0].email, data.firstName);
+                    sendEmail(data[0].email, data[0].firstName);
                 });
             }
         });
 
         request.auth.session.clear();
         request.auth.session.set(profile);
-        request.auth.session.set();
         reply.redirect('/');
     },
 
