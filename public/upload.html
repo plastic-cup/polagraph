@@ -13,9 +13,11 @@
             <button id ="login">Login</button>
         </div>
         <form id="upload" action="/upload" enctype="multipart/form-data" method="post">
-            <input id="text" type="text" name="title"><br>
             <input id="file"type="file" name="upload" multiple="multiple"><br>
-            <input id="text" type="text" name="caption"><br>
+            <p>
+                Add a caption:
+            </p>
+            <textarea type="text" name="caption"></textarea><br>
             <input type="submit" value="Upload">
         </form>
         <script type="text/javascript" src="/static/script.js"></script>
