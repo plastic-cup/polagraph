@@ -4,7 +4,7 @@ var s3 = new AWS.S3();
 
 module.exports = {
     'GET /' : function(request, reply){
-      reply.file('public/index.html');
+      reply.view('index.html', {header1: 'Login Unsuccessful', header2: "Deal with it"});
     },
 
     'GET /{picture}' : function(request, reply){
