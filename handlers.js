@@ -8,7 +8,7 @@ var mongo = require('./mongo');
 
 module.exports = {
     'GET /' : function(request, reply){
-        console.log(request.auth);
+        console.log('auth', request.auth.session.get('fullName'));
       reply.file('public/index.html');
     },
 
@@ -18,9 +18,11 @@ module.exports = {
 
     'POST /upload' : function (request, reply){
         var type = filetype(request.payload.upload);
+        var id = new Date().getTime().toString();
+        mongo.insert('pictures', {id: id, caption : request.payload.caption});
         s3.putObject({
             Bucket : 'polagraph',
-            Key : request.payload.title + '.' + type.ext,
+            Key : id + '.' + type.ext,
             Body : request.payload.upload,
             ContentType : type.mime,
             Metadata : {
@@ -40,7 +42,7 @@ module.exports = {
 
     login : function(request, reply){
         var creds = request.auth.credentials;
-
+        console.log('the creds are ' + creds);
         var profile = {
             googleId: creds.profile.id,
             fullName: creds.profile.displayName,
@@ -59,7 +61,8 @@ module.exports = {
         });
 
         request.auth.session.clear();
-        request.auth.session.set({googleName:creds.profile.displayName});
+        request.auth.session.set(profile);
+        request.auth.session.set();
         reply.redirect('/');
     },
 

@@ -28,7 +28,7 @@ server.register([Bell, Cookie], function (err) {
     server.auth.strategy('session', 'cookie', {
         cookie: 'sid',
         password: Config.session.cookieOptions.password,
-        redirectTo: false,
+        redirectTo: 'false',
         isSecure:false,
     });
 
@@ -37,7 +37,7 @@ server.register([Bell, Cookie], function (err) {
 	      password: Config.auth.google.password,
 				clientId: Config.auth.google.clientId,
 				clientSecret: Config.auth.google.clientSecret,
-	      isSecure: false,
+	      isSecure: false
 	  });
 });
 
